@@ -9,16 +9,7 @@ var MYAPP = {
 	jQuery.ajax({
 	    type: "GET",
 	    url: md,
-	    dataType: "markdown",
-	    contentType: "text/markdown",
-	    accepts: {
-		markdown: "text/markdown"
-	    },
-	    converters: {
-		"text markdown" : function(result) {
-		    return result;
-		}
-	    }
+	    dataType: "text"
 	}).then(
 	    function(data, status, xhr) {
 		$("#myapp-content").html(MYAPP.converter.makeHtml(data));
